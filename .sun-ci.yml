@@ -10,10 +10,6 @@ jobs:
   image: sunci/capistrano:ruby-2.5.1
   script:
   - bundle _2.1.4_ install
-  cache:
-  - key: vendor_$CI_BRANCH
-    paths:
-    - vendor/bundle
 
 - name: deploy:staging
   stage: deploy
@@ -22,7 +18,7 @@ jobs:
   - pwd
   - ls -la
   - ls -la vendor/bundle
-  - bundle -v
+  - bundle _2.1.4_
   script:
   - bundle _2.1.4_ exec cap staging deploy
   only:
