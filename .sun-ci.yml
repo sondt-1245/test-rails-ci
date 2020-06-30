@@ -22,10 +22,8 @@ jobs:
   before_script:
   - pwd
   - ls -la
-  - ls -la -R vendor/bundle/ruby/2.5.0/bin
-  - export BUNDLE_BIN_PATH=
   script:
-  - bundle _2.1.4_ --path vendor/bundle exec cap -V
+  - bundle _2.1.4_ exec  --path vendor/bundle cap -V
   only:
     branches:
     - master
