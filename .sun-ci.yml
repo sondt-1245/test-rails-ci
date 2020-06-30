@@ -7,7 +7,7 @@ stages:
 jobs:
 - name: bundle_install
   stage: install
-  image: framgiaciteam/ruby:2.5.1
+  image: sunci/capistrano:ruby-2.5.1
   script:
   - bundle _2.1.4_ install --path vendor/bundle
   cache:
