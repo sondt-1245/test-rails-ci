@@ -9,6 +9,7 @@ jobs:
   stage: install
   image: sunci/ruby:2.5.1
   script:
+  - env
   - bundle _2.1.4_ install --path vendor/bundle
   - bundle _2.1.4_ exec cap -V
   cache:
@@ -19,6 +20,8 @@ jobs:
 - name: deploy:staging
   stage: deploy
   image: sunci/ruby:2.5.1
+  before_script:
+  - env
   script:
   - bundle _2.1.4_ exec cap -V
   only:
