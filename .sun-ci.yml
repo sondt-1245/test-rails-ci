@@ -1,0 +1,25 @@
+workspace: true
+
+stages:
+- install
+- deploy
+
+jobs:
+- name: bundle_install
+  stage: install
+  image: framgiaciteam/ruby:2.5.1
+  script:
+  - bundle _2.1.4_ install --path vendor/bundle
+  cache:
+  - key: vendor_$CI_BRANCH
+    paths:
+    - vendor/bundle
+
+- name: deploy:staging
+  stage: deploy
+  image: sunci/capistrano:ruby-2.5.1
+  script:
+  - bundle _2.1.4_ exec cap staging deploy
+  only:
+    branches:
+    - milestone1
