@@ -22,4 +22,4 @@ jobs:
   - bundle _2.1.4_ exec cap staging deploy
   only:
     branches:
-    - milestone1
+    - master
