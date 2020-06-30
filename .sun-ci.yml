@@ -10,7 +10,7 @@ jobs:
   image: sunci/ruby:2.5.1
   script:
   - env
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.4_ install
   - bundle _2.1.4_ exec cap -V
   cache:
   - key: vendor_$CI_BRANCH
