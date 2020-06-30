@@ -19,7 +19,6 @@ jobs:
 - name: deploy:staging
   stage: deploy
   image: sunci/ruby:2.5.1
-  before_script:
   script:
   - bundle _2.1.4_ exec cap -V
   only:
