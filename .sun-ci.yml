@@ -22,7 +22,7 @@ jobs:
   before_script:
   - pwd
   - ls -la
-  - ls -la vendor/bundle
+  - ls -la -R vendor/bundle/ruby/2.5.0/bin
   script:
   - bundle _2.1.4_ exec cap -V
   only:
