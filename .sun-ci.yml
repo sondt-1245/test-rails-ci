@@ -11,8 +11,6 @@ jobs:
   script:
   - bundle _2.1.4_ install --path vendor/bundle
   - bundle _2.1.4_ exec cap -V
-  - ls -la /usr/local/bundle/bin
-  - echo $PATH
   cache:
   - key: vendor_$CI_BRANCH
     paths:
@@ -22,10 +20,8 @@ jobs:
   stage: deploy
   image: sunci/ruby:2.5.1
   before_script:
-  - pwd
-  - ls -la /usr/local/bundle/bin
   script:
-  - bundle _2.1.4_ --path vendor/bundle exec cap -V
+  - bundle _2.1.4_ exec cap -V
   only:
     branches:
     - master
