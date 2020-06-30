@@ -24,7 +24,7 @@ jobs:
   - ls -la vendor/bundle
   - bundle -v
   script:
-  - bundle _2.1.4_ exec cap staging deploy --path vendor/bundle
+  - bundle _2.1.4_ exec cap staging deploy
   only:
     branches:
     - master
