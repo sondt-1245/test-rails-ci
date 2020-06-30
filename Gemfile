@@ -17,6 +17,14 @@ gem "dotenv-rails", "~> 2.7.5"
 gem "activerecord-import", "1.0.4"
 gem "carrierwave"
 gem "validates_lengths_from_database", "0.8.0"
+gem "capistrano"
+gem "capistrano-rails"
+gem "capistrano-rvm"
+gem "capistrano3-puma"
+gem "listen", ">= 3.0.5", "< 3.2"
+gem "spring"
+gem "spring-watcher-listen", "~> 2.0.0"
+gem "web-console", ">= 3.3.0"
 
 group :development, :test, :staging, :sun_staging do
   gem "letter_opener_web", "~> 1.0"
@@ -35,16 +43,6 @@ group :development, :test do
   gem "shoulda-callback-matchers"
 end
 
-group :development do
-  gem "capistrano"
-  gem "capistrano-rails"
-  gem "capistrano-rvm"
-  gem "capistrano3-puma"
-  gem "listen", ">= 3.0.5", "< 3.2"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
-  gem "web-console", ">= 3.3.0"
-end
 
 group :test do
   gem "capybara", ">= 2.15"
