@@ -21,6 +21,8 @@ jobs:
   before_script:
   - pwd
   - ls -la
+  - ls -la vendor
+  - bundle -v
   script:
   - bundle _2.1.4_ exec cap staging deploy
   only:
