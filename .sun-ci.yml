@@ -23,7 +23,6 @@ jobs:
   - ls -la
   - ls -la vendor/bundle
   - bundle -v
-  - bundle _2.1.4_ install --path vendor/bundle
   script:
   - bundle _2.1.4_ exec cap staging deploy
   only:
