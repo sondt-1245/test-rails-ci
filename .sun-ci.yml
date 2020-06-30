@@ -11,7 +11,7 @@ jobs:
   script:
   - bundle _2.1.4_ install --path vendor/bundle
   - bundle _2.1.4_ exec cap -V
-  - ls /usr/local/bundle
+  - ls -la /usr/local/bundle/bin
   - echo $PATH
   cache:
   - key: vendor_$CI_BRANCH
@@ -23,11 +23,7 @@ jobs:
   image: sunci/ruby:2.5.1
   before_script:
   - pwd
-  - ls -la
-  - ls -la -R vendor/bundle/ruby/2.5.0/bin
-  - export BUNDLE_BIN_PATH=$(pwd)/vendor/bundle
-  - echo $PATH
-  - ls /usr/local/bundle
+  - ls -la /usr/local/bundle/bin
   script:
   - bundle _2.1.4_ --path vendor/bundle exec cap -V
   only:
