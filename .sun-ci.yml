@@ -23,7 +23,6 @@ jobs:
   - pwd
   - ls -la
   - ls -la vendor/bundle
-  - cap -V
   script:
   - bundle _2.1.4_ exec cap -V
   only:
