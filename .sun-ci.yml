@@ -22,9 +22,9 @@ jobs:
   - pwd
   - ls -la
   - ls -la vendor/bundle
-  - bundle _2.1.4_ exec cap -V
+  - cap -V
   script:
-  - bundle _2.1.4_ exec cap staging deploy
+  - cap staging deploy
   only:
     branches:
     - master
