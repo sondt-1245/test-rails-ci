@@ -7,13 +7,17 @@ stages:
 jobs:
 - name: bundle_install
   stage: install
-  image: sunci/capistrano:ruby-2.5.1
+  image: sunci/ruby:2.5.1
   script:
   - bundle _2.1.4_ install
+  cache:
+  - key: vendor_$CI_BRANCH
+    paths:
+    - vendor/bundle
 
 - name: deploy:staging
   stage: deploy
-  image: sunci/capistrano:ruby-2.5.1
+  image: sunci/ruby:2.5.1
   before_script:
   - pwd
   - ls -la
