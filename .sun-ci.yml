@@ -9,7 +9,7 @@ jobs:
   stage: install
   image: sunci/ruby:2.5.1
   script:
-  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle install --path vendor/bundle
   - bundle _2.1.4_ exec cap -V
   cache:
   - key: vendor_$CI_BRANCH
