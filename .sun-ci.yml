@@ -1,29 +1,20 @@
-workspace: true
-
 stages:
-- install
 - deploy
 
 jobs:
-- name: bundle_install
-  stage: install
+- name: deploy:staging
+  stage: deploy
   image: sunci/ruby:2.5.1
   script:
-  - env
-  - bundle _2.1.4_ install
-  - bundle _2.1.4_ exec cap -V
+  - bundle _2.1.4_ install --path vendor/bundle
+  - bundle _2.1.4_ exec cap staging deploy
   cache:
   - key: vendor_$CI_BRANCH
     paths:
     - vendor/bundle
-
-- name: deploy:staging
-  stage: deploy
-  image: sunci/ruby:2.5.1
-  before_script:
-  - env
-  script:
-  - bundle _2.1.4_ exec cap -V
   only:
     branches:
     - master
+  except:
+    events:
+    - pull_request
