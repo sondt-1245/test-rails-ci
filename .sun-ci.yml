@@ -6,12 +6,8 @@ jobs:
   stage: deploy
   image: sunci/ruby:2.5.1
   script:
-  - bundle _2.1.4_ install --path vendor/bundle
-  - bundle _2.1.4_ exec cap staging deploy
-  cache:
-  - key: vendor_$CI_BRANCH
-    paths:
-    - vendor/bundle
+  - echo done
+  - sleep 10
   only:
     branches:
     - master
