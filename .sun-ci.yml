@@ -7,7 +7,7 @@ jobs:
   image: sunci/ruby:2.5.1
   script:
   - echo done
-  - sleep 10
+  - sleep 15
   only:
     branches:
     - master
